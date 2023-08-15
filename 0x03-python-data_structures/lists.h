@@ -18,5 +18,6 @@ typedef struct listint_s
 } listint_t;
 
 int is_palindrome(listint_t **head);
+def print_list_integer(my_list=[]);
 
 #endif
