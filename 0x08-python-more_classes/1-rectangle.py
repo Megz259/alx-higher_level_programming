@@ -2,6 +2,10 @@
 """Defining a rectangular class"""
 
 
+class Rectangle:
+    """Represents a rectangle"""
+
+
 def __init__(self, width=0, height=0):
     """Creating a rectangle
     Arguments:
