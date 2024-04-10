@@ -7,7 +7,13 @@ Defining a rectangular class
 class Rectangle:
     """
     Creating a rectangle class
+    Attributes:
+    print_symbol (): symbol used
+    number_of_instances (int): number of instances
     """
+
+    number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """
@@ -18,6 +24,7 @@ class Rectangle:
         height (int): heisght of rectangle
         """
 
+        type(self).number_of_instances += 1
         self.width = width
         self.height = height
 
@@ -118,3 +125,18 @@ class Rectangle:
                         if i != self.__height - 1:
                             rect.append("\n")
                             return ("".join(rect))
+
+                        def __repr__(self):
+                            """
+                            Return the string
+                            """
+                            rect = "Rectangle(" + str(self.__width) 
+                            rect += ", " + str(self.__height) + ")"
+                            return (rect)
+
+                        def __del__(self):
+                            """
+                            Create a message for every deletion
+                            """
+                            type(self).number_of_instances -= 1
+                            print("Bye rectangle...")
