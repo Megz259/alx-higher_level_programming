@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-"""Defining a rectangular class"""
+"""
+Defining a rectangular class
+"""
 
 
 class Rectangle:
-    """Represents a rectangle"""
+    """
+    Represents a rectangle
+    """
 
 
 def __init__(self, width=0, height=0):
@@ -20,7 +24,9 @@ def __init__(self, width=0, height=0):
 
     @property
     def width(self):
-        """getting the width of the rectangle"""
+        """
+        getting the width of the rectangle
+        """
 
         return self.__width
 
@@ -34,7 +40,9 @@ def __init__(self, width=0, height=0):
 
         @property
         def height(self):
-            """getting the height of a rectangle"""
+            """
+            getting the height of a rectangle
+            """
 
         return self.__height
 
