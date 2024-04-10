@@ -80,7 +80,9 @@ class Rectangle:
                     __height: height
 
                     Return:
-                        Answer"""
+                        Answer
+                        """
+
                 return (self.__width * self.__height)
 
             def perimeter(self):
@@ -90,7 +92,9 @@ class Rectangle:
                     __height: height
 
                     Return:
-                        answer or 0"""
+                        answer or 0
+                        """
+
                 if self.__width is 0 or self.__height is 0:
                     return 0
                 else:
