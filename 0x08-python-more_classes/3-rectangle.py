@@ -103,3 +103,15 @@ class Rectangle:
                     return 0
                 else:
                     return((self.__width * 2) + (self.__height * 2))
+
+                def __str__(self):
+                    """
+                    Prints the rectangle (with the # character)
+                    """
+
+                    rect = []
+                    for i in range(self.__height):
+                        [rect.append('#') for x in range(self.__width)]
+                        if i != self.__height - 1:
+                            rect.append("\n")
+                            return ("".join(rect))
