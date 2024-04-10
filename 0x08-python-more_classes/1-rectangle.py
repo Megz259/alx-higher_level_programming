@@ -22,6 +22,10 @@ class Rectangle:
         self.height = height
 
         @property
+        def dict(self):
+            return{'width': self.width, 'height': self.height}
+
+        @property
         def width(self):
             """
             getting the width of the rectangle
