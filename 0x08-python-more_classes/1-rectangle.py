@@ -6,7 +6,7 @@ Defining a rectangular class
 
 class Rectangle:
     """
-    Represents a rectangle
+    Creating a rectangle class
     """
 
     def __init__(self, width=0, height=0):
