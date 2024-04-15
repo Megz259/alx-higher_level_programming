@@ -9,7 +9,7 @@ class MyList(list):
 
     pass
 
-def print_sorted(self):
+    def print_sorted(self):
         """Prints a list in ascending order"""
 
         print(sorted(list(self)))
