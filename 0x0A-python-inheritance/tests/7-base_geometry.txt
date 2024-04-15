@@ -17,7 +17,7 @@ if number is an integer "integer_validator()" returns True.
   >>> bg.integer_validator("my_int", 12)
 
 :: with negative integers
-  >>> bg.integer_validator('my_int', -12)
+  >>> bg.integer_validator("number", -12)
   Traceback (most recent call last):
   ValueError: number must be greater than 0
 
