@@ -23,7 +23,10 @@ class Student:
             Args:
             attrs (list): attributes
             """
-            if (type(attrs) == list and
-                    all(type(element) == str for element in attrs)):
-                return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
-            return self.__dict__
+            if attrs is None:
+                return self.__dict__
+            new_dict = {}
+            for key, value in self.__dict__.items():
+                if key is attrs:
+                    new_dict[key] = value
+                    return new_dict
