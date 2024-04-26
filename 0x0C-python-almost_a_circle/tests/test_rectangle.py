@@ -19,7 +19,7 @@ class TestTheRectangle(unittest.TestCase):
 
     def test_none(self):
         """test class type"""
-        with self.assertRaise(TypeError):
+        with self.assertRaises(TypeError):
             Rectangle()
 
     def test_base(self):
@@ -28,12 +28,12 @@ class TestTheRectangle(unittest.TestCase):
 
     def test_one(self):
         """Test for 1 arg"""
-        with self.assertRaise(TypeError):
+        with self.assertRaises(TypeError):
             Rectangle(1)
 
     def test_many(self):
         """test for many arguments"""
-        with self.assertRaise(TypeError) as e:
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(1, 2, 3, 4, 5, 6)
             s = "__init__() arguments given"
             self.assertEqual(str(e.exception), s)
@@ -47,52 +47,52 @@ class TestTheRectangle(unittest.TestCase):
                 "_Rectangle__x": 0, "_Rectangle__y": 0, "id": 1}
         self.assertDictEqual(r.__dict__, d)
 
-        with self.assertRaise(TypeError) as e:
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(1, "2")
             response = "height must be an integer"
             self.assertEqual(str(e.exception), response)
 
-        with self.assertRaise(TypeError) as e:
+        with self.assertRaises(TypeError) as e:
             r = Rectangle("1", 2)
             response = "width must be an integer"
             self.assertEqual(str(e.exception), response)
 
-        with self.assertRaise(TypeError) as e:
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(1, 2, "3")
             response = "x must be an integer"
             self.assertEqual(str(e.exception), response)
 
-        with self.assertRaise(TypeError) as e:
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(1, 2, 3, "4")
             response = "y must be an integer"
             self.assertEqual(str(e.exception), response)
 
-        with self.assertRaise(TypeError) as e:
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(1, -2)
             response = "height must be > 0"
             self.assertEqual(str(e.exception), response)
 
-        with self.assertRaise(TypeError) as e:
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(1, 0)
             response = "height must be > 0"
             self.assertEqual(str(e.exception), response)
 
-        with self.assertRaise(TypeError) as e:
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(-1, 2)
             response = "width must be > 0"
             self.assertEqual(str(e.exception), response)
 
-        with self.assertRaise(TypeError) as e:
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(0, 2)
             response = "width must be > 0"
             self.assertEqual(str(e.exception), response)
 
-        with self.assertRaise(TypeError) as e:
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(1, 2, -3)
             response = "x must be >= 0"
             self.assertEqual(str(e.exception), response)
 
-        with self.assertRaise(TypeError) as e:
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(1, 2, 3, -4)
             response = "y must be >= 0"
             self.assertEqual(str(e.exception), response)

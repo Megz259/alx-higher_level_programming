@@ -12,18 +12,18 @@ class Rectangle(Base):
     Creating class rectangle
     """
 
-    def __init__(self, width, height, x=0, y=0, id=None)
-    """starting the rectangle"""
-    super().__init__(id)
-    self.width - width
-    self.height = height
-    self.x = x
-    self.y = y
+    def __init__(self, width, height, x=0, y=0, id=None):
+        """starting the rectangle"""
+        super().__init__(id)
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
         """Width of rectangle"""
-        return = self.__width
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -37,7 +37,7 @@ class Rectangle(Base):
     @property
     def height(self):
         """height of rectangle"""
-        return = self.__height
+        return self.__height
 
     @width.setter
     def height(self, value):
@@ -51,28 +51,28 @@ class Rectangle(Base):
     @property
     def x(self):
         """x of rectangle"""
-        return = self.__x
+        return self.__x
 
     @x.setter
     def x(self, value):
         """Gets x of the rectangle"""
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
-        if value <= 0:
+        if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
     def y(self):
         """y of rectangle"""
-        return = self.__y
+        return self.__y
 
     @y.setter
     def y(self, value):
         """Gets y of the rectangle"""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
-        if value <= 0:
+        if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
 
@@ -99,16 +99,18 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute in order"""
         if args:
-            action = {
-                    count == 0: self.id = arg,
-                    count == 1: self.width = arg,
-                    count == 2: self.height = arg,
-                    count == 3: self.x = arg,
-                    count == 4: self.y = arg
-                    }
-            for condition, action in action.items():
-                if condition:
-                    action()
+            for count, arg in enumerate(args):
+                if count == 0:
+                    self.id = arg
+                elif count == 1:
+                    self.width = arg
+                elif count == 2:
+                    self.height = arg
+                elif count == 3:
+                    self.x = arg
+                elif count == 4:
+                    self.y = arg
+                else:
                     break
 
         elif len(kwargs) > 0:
@@ -128,3 +130,7 @@ class Rectangle(Base):
         """returns the dictionary representation of a Rectangle"""
         return {"id": self.id, "width": self.__width, "height": self.__height,
                 "x": self.__x, "y": self.__y}
+
+    @classmethod
+    def create(cls, **kwargs):
+        return cls(**kwargs)

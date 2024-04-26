@@ -7,7 +7,6 @@ Module for defining a base class
 import json
 from json import dumps, loads
 import csv
-import trutle
 
 
 class Base:
