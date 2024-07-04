@@ -11,17 +11,9 @@ def find_peak(list_of_integers):
     Returns:
     the integer or nothing
     """
-    if not list_of_integers:
-        return None
-
-    low = 0
-    high = len(list_of_integers) - 1
-
-    while low < high:
-        middle = (low + high) // 2
-        if list_of_integers[middle] <= list_of_integers[middle + 1]:
-            low = middle + 1
-            else:
-                high = middle
-
-    return list_of_integers[low]
+    
+    top_i = None
+    for element in list_of_integers:
+        if top_i is None or top_i < element:
+            top_i = element
+            return top_i
