@@ -11,6 +11,9 @@ def find_peak(list_of_integers):
     Returns:
     the integer or nothing
     """
+    if not list_of_integers:
+        return None
+
     low = 0
     high = len(list_of_integers) - 1
 
@@ -20,8 +23,5 @@ def find_peak(list_of_integers):
             low = middle + 1
             else:
                 high = middle
-
-    if not list_of_integers:
-        return None
 
     return list_of_integers[low]
